@@ -1,6 +1,6 @@
 ﻿# HR Attrition — Decision Summary
 
-**What we built:** Baseline attrition risk model using Logistic Regression (OHE + scaling). Random Forest as a comparison.
+**What I built:** Baseline attrition risk model using Logistic Regression (OHE + scaling). Random Forest as a comparison.
 
 **Key metrics (test set):**
 - ROC-AUC (LR): <fill from docs/metrics_attrition.json>
