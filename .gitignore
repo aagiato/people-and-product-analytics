@@ -7,3 +7,15 @@ Thumbs.db
 # Data
 data/
 !*/data/.gitkeep
+
+# Keep raw datasets out
+**/data/*
+!**/data/.gitkeep
+
+# Keep raw datasets out
+**/data/*
+!**/data/.gitkeep
+
+# Keep raw datasets out
+**/data/*
+!**/data/.gitkeep
