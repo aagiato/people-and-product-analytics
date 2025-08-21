@@ -1,5 +1,5 @@
 -- people_analytics_hr/sql/hr_basics.sql
--- Example (DuckDB/SQLite). First create a table named hr from your CSV.
+-- Example (DuckDB/SQLite). First create a table named hr from the CSV.
 
 -- Headcount by Department
 SELECT Department, COUNT(*) AS headcount
