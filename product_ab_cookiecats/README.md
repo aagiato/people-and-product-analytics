@@ -1,5 +1,4 @@
-# A/B Test Readout — Cookie Cats
-
-**Skills:** SRM, diff-in-means + 95% CI, guardrails, **CUPED**, SQL windows
-
-Dataset: https://www.kaggle.com/datasets/mursideyarkin/cookie-cats (place CSV in `./data/`).
+**Summary:** **SRM failed** (χ² = 6.902, p = 0.0086; A = 44,700 vs B = 45,489 ⇒ ~+0.9 pp to B).  
+Observed (context only): Δ7d = −0.0082 (95% CI [−0.0133, −0.0031]); CUPED Δ = −0.0082 (95% CI [−0.0130, −0.0034]).  
+**Decision:** **Invalid — re-run** with corrected allocation; do not infer product impact from this run.  
+Artifacts: [`srm_counts.csv`](docs/srm_counts.csv), [`srm_result.txt`](docs/srm_result.txt), [`effect_size_ci.txt`](docs/effect_size_ci.txt).
