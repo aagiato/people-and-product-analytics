@@ -1,13 +1,3 @@
-# People Analytics — IBM HR Attrition
-
-**Role mapping:** People Analytics | Product Analytics (metrics)
-
-## Dataset
-Kaggle: https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset  
-Download `WA_Fn-UseC_-HR-Employee-Attrition.csv` into `./data/`.
-
-## Goals
-- Overall **attrition %**
-- Attrition by **Department** and **JobRole**
-- 3 **data-quality** checks
-- Short **metrics spec** in `docs/metrics_spec_people_analytics.md`
+**Summary:** Logistic Regression baseline with OHE + scaling on IBM HR Attrition.  
+**Results:** AUC **0.812**; best threshold **0.233**; **P/R/F1 0.492 / 0.617 / 0.547**; base rate **0.161**.  
+Artifacts: confusion matrix, ROC, calibration, top predictors, and fairness slices (Gender/MaritalStatus/Department/JobRole).
