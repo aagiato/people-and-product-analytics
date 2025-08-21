@@ -25,23 +25,25 @@ This one-pager summarizes results for quick screening (no setup required). Deep 
 
 ---
 
-## 2) People Analytics — IBM HR (Attrition & KPIs)
+## 2) People Analytics — IBM HR (Attrition Model)
 **Dataset:** IBM HR Attrition CSV (Kaggle).  
-**Focus:** Attrition %, by Department/JobRole; tenure banding; DQ checks; SQL↔Pandas parity.
+**Approach:** Logistic Regression baseline (OHE + scaling) with Random Forest comparison; fairness slice reports by Gender/MaritalStatus/Department/JobRole.
 
-**Headline KPIs (fill after running `hr_eda.ipynb`):**  
-- Overall attrition %: **[TBD]**  
-- Top 3 by attrition: **[Dept/Role + %]**  
-- Tenure distribution: **[TBD]**
+**Model results (test set — Logistic Regression):**  
+- **AUC:** **0.812**  
+- **Operating threshold (max F1):** **0.233**  
+- **Precision / Recall / F1 @ thr:** **0.492 / 0.617 / 0.547**  
+- **Base attrition rate:** **0.161**
 
-**Data quality checks:**  
-- Nulls in Department/JobRole within threshold: **[TBD]**  
-- Non-negative tenure; unique EmployeeNumber: **[TBD]**
+**Drivers:** See `top_features_logreg.csv` (examples often include OverTime, JobLevel, MonthlyIncome, YearsAtCompany, MaritalStatus).  
+**Fairness slices:** `slice_metrics_Gender.csv`, `slice_metrics_MaritalStatus.csv`, `slice_metrics_Department.csv`, `slice_metrics_JobRole.csv`.  
+**Calibration:** `calibration_lr.png` (Brier in `metrics_attrition.json`).
 
-**Links:**  
-- Notebook: `people_analytics_hr/notebooks/hr_eda.ipynb`  
-- SQL: `people_analytics_hr/sql/hr_basics.sql`  
-- Metrics spec: `people_analytics_hr/docs/metrics_spec_people_analytics.md`
+**Links & Artifacts:**  
+- Notebook / script: `people_analytics_hr/notebooks/model.py` (plus any `.ipynb`)  
+- Artifacts: `people_analytics_hr/docs/roc_lr.png`, `confusion_matrix_lr.png`, `calibration_lr.png`, `top_features_logreg.csv`, `top_features_rf.csv`, `metrics_attrition.json`, `slice_metrics_*.csv`  
+- Memo: `people_analytics_hr/docs/decision_memo.md`  
+- (EDA & SQL, if desired): `people_analytics_hr/notebooks/hr_attrition_eda.ipynb`, `people_analytics_hr/sql/hr_basics.sql`
 
 ---
 
